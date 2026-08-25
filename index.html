@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#04070b" />
+<title>Kamlendu Kumar — The Human History of Data</title>
+<meta name="description" content="Kamlendu Kumar, Cloud Data Engineer at Barclays. A scroll-driven journey through the history of data persistence — from written memory to streaming, lakehouse and governed cloud-native systems." />
+<meta property="og:title" content="Kamlendu Kumar — The Human History of Data" />
+<meta property="og:description" content="Cloud Data Engineer. Streaming, Customer 360, Hadoop → AWS migration, Apache Iceberg, Databricks, governance." />
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Kamlendu Kumar" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Kamlendu Kumar — The Human History of Data" />
+<meta name="twitter:description" content="Cloud Data Engineer. Streaming, Customer 360, Hadoop → AWS migration, Apache Iceberg, Databricks, governance." />
+<meta name="author" content="Kamlendu Kumar" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="/" />
+
+<!--
+  Structured data. This is what makes a name searchable as a person rather than
+  as a string, and it is the cheapest thing on this page by a wide margin.
+
+  Deliberately conservative: no dates, no certifications, no employment period.
+  Search engines will happily index a fabricated credential and the correction
+  is much harder than the omission. Add `alumniOf`, `hasCredential` and
+  `sameAs` entries only once the real values are supplied — see NEEDS_SOURCE in
+  src/data/portfolio.js.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kamlendu Kumar",
+  "jobTitle": "Cloud Data Engineer",
+  "email": "mailto:kamlendukumar4480@gmail.com",
+  "worksFor": { "@type": "Organization", "name": "Barclays" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pune",
+    "addressCountry": "IN"
+  },
+  "knowsAbout": [
+    "Apache Spark",
+    "Spark Structured Streaming",
+    "Apache Kafka",
+    "Apache Iceberg",
+    "Databricks",
+    "Amazon Web Services",
+    "Data governance",
+    "Master data management",
+    "Customer 360"
+  ]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2304070b'/%3E%3Cpath d='M18 44V20h5v11l10-11h6L28 32l12 12h-6l-11-11v11z' fill='%23d8b06a'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ========= 3D STAGE ========= -->
+<div id="stage" aria-hidden="true">
+  <canvas id="scene"></canvas>
+  <div id="veil"></div>
+  <div id="vignette"></div>
+  <div id="grain"></div>
+</div>
+
+<!-- ========= BOOT ========= -->
+<div id="boot" role="status" aria-live="polite">
+  <div class="boot-inner">
+    <div class="boot-pulse"><span></span></div>
+    <p class="boot-line" data-line="0">KAMLENDU // DATA PLANE</p>
+    <p class="boot-line" data-line="1">ARCHIVE INITIALIZATION</p>
+    <p class="boot-line boot-year" data-line="2">YEAR: BEFORE DIGITAL STORAGE</p>
+    <div class="boot-bar"><i id="bootBar"></i></div>
+  </div>
+  <button id="bootSkip" type="button">Skip intro</button>
+</div>
+
+<!-- ========= HEADER ========= -->
+<header id="topbar">
+  <a class="brand" href="#chapter-0">
+    <span class="brand-mark" aria-hidden="true">KK</span>
+    <span class="brand-text">
+      <b>KAMLENDU KUMAR</b>
+      <small>CLOUD DATA ENGINEER</small>
+    </span>
+  </a>
+  <div class="topbar-actions">
+    <button class="ctl" id="btnRecruiter" type="button" aria-pressed="false">Recruiter mode</button>
+    <button class="ctl" id="btnSound" type="button" aria-pressed="false">Sound off</button>
+    <button class="ctl ctl-key" id="btnPalette" type="button" aria-haspopup="dialog">Jump to<kbd>⌘K</kbd></button>
+  </div>
+</header>
+
+<!-- ========= STRATA RAIL (desktop) ========= -->
+<nav id="strata" aria-label="Eras of data storage">
+  <div class="strata-head"><span>STRATA</span></div>
+  <ol id="strataList"></ol>
+  <div class="strata-foot"><span id="strataYear">—</span></div>
+</nav>
+
+<!-- ========= ERA READOUT (desktop) ========= -->
+<aside id="readout">
+  <div class="readout-row"><span id="roIndex">01 / 15</span><span id="roTag">ORIGIN</span></div>
+  <b id="roName">WRITTEN MEMORY</b>
+  <div class="readout-bar"><i id="roProg"></i></div>
+  <div class="readout-meta"><span id="roMedium">INK ON PAPER</span></div>
+</aside>
+
+<!-- ========= NARRATIVE CONTENT ========= -->
+<main id="story"></main>
+
+<!-- ========= MOBILE DOCK ========= -->
+<nav id="dock" aria-label="Era navigation">
+  <button id="dockPrev" type="button" aria-label="Previous era">←</button>
+  <div class="dock-core">
+    <span id="dockIndex">01 / 15</span>
+    <b id="dockName">WRITTEN MEMORY</b>
+    <div class="dock-bar"><i id="dockProg"></i></div>
+  </div>
+  <button id="dockNext" type="button" aria-label="Next era">→</button>
+</nav>
+
+<!-- ========= COMMAND PALETTE ========= -->
+<div id="palette" role="dialog" aria-modal="true" aria-label="Jump to a section" hidden>
+  <div class="palette-panel">
+    <input id="paletteInput" type="text" placeholder="Jump to an era, project or section…" autocomplete="off" spellcheck="false" />
+    <ul id="paletteList" role="listbox"></ul>
+    <div class="palette-foot"><kbd>↑↓</kbd> move <kbd>↵</kbd> go <kbd>esc</kbd> close</div>
+  </div>
+</div>
+
+<!-- ========= PROJECT DETAIL ========= -->
+<div id="portal" role="dialog" aria-modal="true" aria-label="Project detail" hidden>
+  <div class="portal-panel">
+    <button class="portal-close" id="portalClose" type="button" aria-label="Close project">✕</button>
+    <div class="portal-body" id="portalBody"></div>
+  </div>
+</div>
+
+<!-- ========= DIAGNOSTICS (dev only) ========= -->
+<div id="diag" hidden></div>
+
+<script type="module" src="/src/main.js"></script>
+<noscript>
+  <div class="noscript">
+    <h1>Kamlendu Kumar — Cloud Data Engineer</h1>
+    <p>This portfolio is an interactive 3D journey and needs JavaScript. The essentials: Cloud Data Engineer at Barclays, working on streaming pipelines, Customer 360, Hadoop → AWS migration, Apache Iceberg maintenance, Databricks and governed cloud-native data platforms.</p>
+    <p>Email <a href="mailto:kamlendukumar4480@gmail.com">kamlendukumar4480@gmail.com</a>.</p>
+  </div>
+</noscript>
+</body>
+</html>

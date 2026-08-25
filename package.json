@@ -1,0 +1,27 @@
+{
+  "name": "kamlendu-data-plane-v6",
+  "private": true,
+  "version": "6.0.0",
+  "type": "module",
+  "description": "The Human History of Data — a scroll-driven cinematic 3D portfolio for Kamlendu Kumar, Cloud Data Engineer.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "test": "node tools/content-audit.mjs && node tools/smoke.mjs && node tools/games-smoke.mjs && node tools/ui-smoke.mjs",
+    "test:scenes": "node tools/smoke.mjs",
+    "test:ui": "node tools/ui-smoke.mjs",
+    "test:games": "node tools/games-smoke.mjs",
+    "audit": "node tools/content-audit.mjs"
+  },
+  "dependencies": {
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/archivo": "^5.1.0",
+    "@fontsource/ibm-plex-mono": "^5.1.0",
+    "@fontsource/instrument-sans": "^5.1.0",
+    "jsdom": "^30.0.1",
+    "vite": "^5.4.10"
+  }
+}
